@@ -4,12 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
-      - dev
+      - revanced-extended
   pull_request:
     branches:
-      - main
-      - dev
+      - revanced-extended
 
 jobs:
   release:
