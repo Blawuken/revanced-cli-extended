@@ -1,7 +1,7 @@
-name: Release
+name: Build Test
 
 on:
-  workflow_dispatch:
+  push:
     branches:
       - revanced-extended
 
@@ -30,15 +30,3 @@ jobs:
 
       - name: Build
         run: ./gradlew build clean
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "lts/*"
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Release
-        run: npm exec semantic-release
